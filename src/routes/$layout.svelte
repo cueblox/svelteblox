@@ -26,32 +26,31 @@
 </script>
 
 <script>
-	import { page } from '$app/stores';
 	import MobileMenu from '$lib/MobileMenu.svelte';
 	import Sidebar from '$lib/Sidebar.svelte';
 
-	import Search 	from '$lib/Search.svelte';
+	import Search from '$lib/Search.svelte';
 	import '../app.postcss';
 	export let sections;
-	export let path;
 
 	let mobileMenuOpen = true;
 
 	const toggleMenu = () => {
-		mobileMenuOpen = !mobileMenuOpen
-	}	
+		mobileMenuOpen = !mobileMenuOpen;
+	};
 </script>
 
 <div class="h-screen flex overflow-hidden bg-gray-100">
 	<!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-	<MobileMenu sections={sections} bind:hidden={mobileMenuOpen}/>
+	<MobileMenu {sections} bind:hidden={mobileMenuOpen} />
 
 	<!-- Sidebar component, swap this element with another sidebar if you like -->
-	<Sidebar sections={sections} />
+	<Sidebar {sections} />
 
 	<div class="flex flex-col w-0 flex-1 overflow-hidden">
 		<div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
-			<button on:click={toggleMenu}
+			<button
+				on:click={toggleMenu}
 				class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
 			>
 				<span class="sr-only">Open sidebar</span>
@@ -78,7 +77,7 @@
 		<main class="flex-1 relative overflow-y-auto focus:outline-none">
 			<div class="py-6">
 				<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-					<slot ></slot>
+					<slot />
 				</div>
 			</div>
 		</main>
