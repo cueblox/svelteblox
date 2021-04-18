@@ -32,11 +32,20 @@
 	import '../app.postcss';
 	export let sections;
 	export let path;
+
+	import { createEventDispatcher } from 'svelte'
+  	const dispatch = createEventDispatcher()
+
+	let mobileMenuOpen = true;
+
+	const doSomething = () => {
+		mobileMenuOpen = !mobileMenuOpen
+	}	
 </script>
 
 <div class="h-screen flex overflow-hidden bg-gray-100">
 	<!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-	<MobileMenu />
+	<MobileMenu bind:hidden={mobileMenuOpen}/>
 
 	<!-- Sidebar component, swap this element with another sidebar if you like -->
 	<div class="hidden md:flex md:flex-shrink-0">
@@ -95,7 +104,7 @@
 
 	<div class="flex flex-col w-0 flex-1 overflow-hidden">
 		<div class="relative z-10 flex-shrink-0 flex h-16 bg-white shadow">
-			<button
+			<button on:click={doSomething}
 				class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
 			>
 				<span class="sr-only">Open sidebar</span>

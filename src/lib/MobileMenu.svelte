@@ -1,7 +1,16 @@
 <script>
+	const hide = () => {
+		hidden = !hidden;
+	};
+	export let hidden = false;
 </script>
 
-<div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
+<div
+	class="{hidden ? 'hidden' : ''}
+fixed inset-0 flex z-40 md:hidden"
+	role="dialog"
+	aria-modal="true"
+>
 	<!--
     Off-canvas menu overlay, show/hide based on off-canvas menu state.
 
@@ -37,6 +46,7 @@
     -->
 		<div class="absolute top-0 right-0 -mr-12 pt-2">
 			<button
+				on:click={hide}
 				class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
 			>
 				<span class="sr-only">Close sidebar</span>
