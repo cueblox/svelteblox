@@ -46,7 +46,8 @@
 				class="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto"
 			>
 				<div class="flex items-center flex-shrink-0 px-4">
-					<img class="h-8 w-auto" src="/logo.svg" alt="Workflow" /><span class="px-2 text-base font-semibold tracking-wider text-default-600 uppercase">CueBlox</span>
+					<img class="h-8 w-auto" src="/logo.svg" alt="Workflow" /><span class="px-2 text-base font-semibold tracking-wider text-default-600 uppercase">
+						<a href="/">CueBlox</a></span>
 				</div>
 				<div class="mt-5 flex-grow flex flex-col">
 					<nav class="flex-1 px-2 bg-white space-y-1">
