@@ -38,7 +38,6 @@
 	<!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
 	<MobileMenu />
 
-	<!-- Static sidebar for desktop -->
 	<!-- Sidebar component, swap this element with another sidebar if you like -->
 	<div class="hidden md:flex md:flex-shrink-0">
 		<div class="flex flex-col w-64">
@@ -79,16 +78,11 @@
 						</svg>
 						{section.name}
 					</a>	
-
 					<div class="space-y-1" id="sub-menu-3">
 							{#each section.pages as page}
-
 								<a href="/{section.id}/{page.id}" class="group w-full flex items-center pl-10 pr-2 py-2 text-sm font-medium text-gray-600 rounded-md hover:text-gray-900 hover:bg-gray-50">
 								  {page.title}
 								</a>
-					  
-
-
 							{/each}
 						</div>
 						{/each}
