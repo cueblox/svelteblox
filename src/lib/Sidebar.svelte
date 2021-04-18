@@ -3,7 +3,6 @@
 	export let sections;
 
 	$: active = (sect) => {
-		console.log(sect.id, $page.path.includes(sect.id));
 		const style = $page.path.includes(sect.id)
 			? 'bg-gray-100 text-gray-900'
 			: 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900';
