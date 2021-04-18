@@ -28,6 +28,8 @@ module.exports = {
 			crawl: true,
 			pages: ["/"]
 		},
+		hydrate: false,
+		router: false,
 
 		vite: {
 			ssr: {
