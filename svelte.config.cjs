@@ -9,10 +9,10 @@ module.exports = {
 	preprocess: [
 		sveltePreprocess({
 			defaults: {
-				style: "postcss",
+				style: 'postcss'
 			},
 			postcss: true
-		}),
+		})
 	],
 
 	kit: {
@@ -26,10 +26,9 @@ module.exports = {
 		prerender: {
 			enabled: true,
 			crawl: true,
-			pages: ["/"]
+			pages: ['/']
 		},
 		router: false,
-
 
 		vite: {
 			ssr: {
