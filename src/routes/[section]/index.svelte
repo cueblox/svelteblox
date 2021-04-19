@@ -1,10 +1,22 @@
 <script context="module">
 	export const prerender = true;
 
+	import { query, setClient } from 'svelte-apollo';
+	import { ApolloClient, InMemoryCache } from '@apollo/client';
+
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export async function load({ page, fetch, session, context }) {
+	export async function load({ page, session, context }) {
+		const graphQLClient = new ApolloClient({
+			uri: 'https://api.cueblox.com/api/graphql',
+			cache: new InMemoryCache()
+		});
+		setClient(graphQLClient);
+		// const sections = query(`{ allSections { name } }`);
+
+		console.log('SECTIONS');
+
 		const url = `https://cueblox-api.azurewebsites.net/api/sections/${page.params.section}?_embed=pages`;
 		const res = await fetch(url);
 		if (res.ok) {
